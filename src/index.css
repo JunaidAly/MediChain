@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #1A2A47;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-accent text-brand-bg font-semibold px-6 py-2 rounded-full hover:opacity-90 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-brand-accent text-brand-accent font-semibold px-6 py-2 rounded-full hover:bg-brand-accent hover:text-brand-bg transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-transparent border border-brand-border rounded-full px-4 py-2 text-white placeholder-gray-400 text-sm outline-none focus:border-brand-accent transition-colors;
+  }
+
+  .card {
+    @apply bg-brand-card rounded-2xl border border-brand-border;
+  }
+
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 cursor-pointer;
+  }
+
+  .sidebar-nav-item.active {
+    background: linear-gradient(90deg, rgba(157,235,255,0.2) 0%, rgba(26,42,71,0) 100%);
+    @apply text-brand-accent border-l-2 border-brand-accent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1C31;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3358;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9DEBFF;
+}
